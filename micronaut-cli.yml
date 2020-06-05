@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: mx.com.burodecredito
+---
+testFramework: junit
+sourceLanguage: java
