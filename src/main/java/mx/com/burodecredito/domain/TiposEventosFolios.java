@@ -18,7 +18,7 @@ public class TiposEventosFolios implements Serializable {
     @Column(name = "id_tipo_evento", insertable = false, updatable = false, nullable = false)
     private Integer idTipoEvento;
 
-    @NotNull()
+    @NotNull
     @Column(name = "nombre")
     private String nombre;
 
