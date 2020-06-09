@@ -66,6 +66,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>org.graalvm.nativeimage</groupId>
+            <artifactId>svm</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-management</artifactId>
         </dependency>
@@ -190,6 +195,11 @@
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
+                                <artifactId>micronaut-graal</artifactId>
+                                <version>${micronaut.version}</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-inject-java</artifactId>
                                 <version>${micronaut.version}</version>
                             </path>
@@ -206,11 +216,6 @@
                             <path>
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-validation</artifactId>
-                                <version>${micronaut.version}</version>
-                            </path>
-                            <path>
-                                <groupId>io.micronaut</groupId>
-                                <artifactId>micronaut-graal</artifactId>
                                 <version>${micronaut.version}</version>
                             </path>
                         </annotationProcessorPaths>
@@ -230,6 +235,11 @@
                                         <groupId>org.projectlombok</groupId>
                                         <artifactId>lombok</artifactId>
                                         <version>1.18.0</version>
+                                    </path>
+                                    <path>
+                                        <groupId>io.micronaut</groupId>
+                                        <artifactId>micronaut-graal</artifactId>
+                                        <version>${micronaut.version}</version>
                                     </path>
                                     <path>
                                         <groupId>io.micronaut</groupId>

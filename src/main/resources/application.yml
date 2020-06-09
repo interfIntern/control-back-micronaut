@@ -26,6 +26,7 @@ jpa:
         hbm2ddl:
           auto: update
         show_sql: true
+        timeZone: UTC
 endpoints:
   all:
     enabled: true

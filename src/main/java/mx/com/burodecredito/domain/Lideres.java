@@ -29,7 +29,6 @@ public class Lideres implements Serializable {
     @Column(name = "paterno")
     private String paterno;
 
-    @NotNull
     @Column(name = "materno")
     private String materno;
 

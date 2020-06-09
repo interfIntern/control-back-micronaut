@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Table(name = "eventos_folios")
 @Entity
@@ -24,10 +25,10 @@ public class EventosFolios implements Serializable {
 
     @NotNull
     @Column(name = "registrado_en")
-    private String registradoEn;
+    private LocalDateTime registradoEn;
 
     @Column(name = "fecha_hora")
-    private String fechaHora;
+    private LocalDateTime fechaHora;
 
     @NotNull
     @Column(name = "id_lider")
