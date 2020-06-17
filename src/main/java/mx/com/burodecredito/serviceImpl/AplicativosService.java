@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.AmbientesRepository;
 import mx.com.burodecredito.dao.AplicativosRepository;
@@ -26,7 +27,7 @@ public class AplicativosService implements IGenericService<Aplicativos, Integer>
 
     @Override
     public HttpResponse<List<Aplicativos>> getAll() {
-        List<Aplicativos> responsBody = repository.findAll();
+        List<Aplicativos> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idAplicativo")));
         return HttpResponse.ok(responsBody);
     }
 

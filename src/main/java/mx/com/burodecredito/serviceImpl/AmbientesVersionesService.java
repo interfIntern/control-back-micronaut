@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.AmbientesVersionesRepository;
 import mx.com.burodecredito.domain.AmbientesVersiones;
@@ -24,7 +25,7 @@ public class AmbientesVersionesService implements IGenericService<AmbientesVersi
 
     @Override
     public HttpResponse<List<AmbientesVersiones>> getAll() {
-        List<AmbientesVersiones> responsBody = repository.findAll();
+        List<AmbientesVersiones> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idAmbienteVersion")));
         return HttpResponse.ok(responsBody);
     }
 

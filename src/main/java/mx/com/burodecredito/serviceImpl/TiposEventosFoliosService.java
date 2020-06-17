@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.TiposEventosFoliosRepository;
 import mx.com.burodecredito.domain.TiposEventosFolios;
@@ -24,7 +25,7 @@ public class TiposEventosFoliosService implements IGenericService<TiposEventosFo
 
     @Override
     public HttpResponse<List<TiposEventosFolios>> getAll() {
-        List<TiposEventosFolios> responsBody = repository.findAll();
+        List<TiposEventosFolios> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idTipoEvento")));
         return HttpResponse.ok(responsBody);
     }
 

@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.VersionesRepository;
 import mx.com.burodecredito.domain.Versiones;
@@ -24,7 +25,7 @@ public class VersionesService implements IGenericService<Versiones, Integer> {
 
     @Override
     public HttpResponse<List<Versiones>> getAll() {
-        List<Versiones> responsBody = repository.findAll();
+        List<Versiones> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idVersion")));
         return HttpResponse.ok(responsBody);
     }
 

@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.DependenciasAplicativosRepository;
 import mx.com.burodecredito.domain.DependenciasAplicativos;
@@ -24,7 +25,7 @@ public class DependenciasAplicativosService implements IGenericService<Dependenc
 
     @Override
     public HttpResponse<List<DependenciasAplicativos>> getAll() {
-        List<DependenciasAplicativos> responsBody = repository.findAll();
+        List<DependenciasAplicativos> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idDependencia")));
         return HttpResponse.ok(responsBody);
     }
 

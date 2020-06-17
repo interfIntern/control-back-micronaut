@@ -1,5 +1,6 @@
 package mx.com.burodecredito.serviceImpl;
 
+import io.micronaut.data.model.Sort;
 import io.micronaut.http.HttpResponse;
 import mx.com.burodecredito.dao.SuitesRepository;
 import mx.com.burodecredito.domain.Suites;
@@ -24,7 +25,7 @@ public class SuitesService implements IGenericService<Suites, Integer> {
 
     @Override
     public HttpResponse<List<Suites>> getAll() {
-        List<Suites> responsBody = repository.findAll();
+        List<Suites> responsBody = repository.findAll(Sort.of(Sort.Order.asc("idSuite")));
         return HttpResponse.ok(responsBody);
     }
 

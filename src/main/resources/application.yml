@@ -1,6 +1,15 @@
 micronaut:
   application:
     name: mn-control-api
+  server:
+    cors:
+      enabled: true
+      configurations:
+        web:
+          exposedHeaders:
+            - Content-Type
+            - Authorization
+            - '*'
   jackson:
     bean-introspection-module: true
   router:
