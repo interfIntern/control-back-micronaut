@@ -9,7 +9,9 @@ import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.test.annotation.MicronautTest;
 import lombok.extern.slf4j.Slf4j;
+import mx.com.burodecredito.domain.Aplicativos;
 import mx.com.burodecredito.domain.Folios;
+import mx.com.burodecredito.domain.Lideres;
 import mx.com.burodecredito.domain.Suites;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -76,10 +78,14 @@ class FoliosControllerTest {
     @Test
     @Order(4)
     void testUpdate() {
+        Aplicativos ap = new Aplicativos();
+        ap.setIdAplicativo(3);
+        Lideres lider = new Lideres();
+        lider.setIdLider(3);
         Folios params = new Folios();
         params.setIdFolio(idPrueba);
-        params.setIdAplicativo(3);
-        params.setIdLider(3);
+        params.setAplicativo(ap);
+        params.setLider(lider);
         params.setFolioCq("f-020");
         params.setDescripcion("Follio de evento automatizar");
         params.setResumen("");
@@ -100,9 +106,13 @@ class FoliosControllerTest {
     }
 
     private void addData() {
+        Aplicativos ap = new Aplicativos();
+        ap.setIdAplicativo(3);
+        Lideres lider = new Lideres();
+        lider.setIdLider(3);
         Folios params = new Folios();
-        params.setIdAplicativo(3);
-        params.setIdLider(3);
+        params.setAplicativo(ap);
+        params.setLider(lider);
         params.setFolioCq("f-0202");
         params.setDescripcion("Follio de evento automatizar");
         params.setResumen("");

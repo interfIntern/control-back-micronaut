@@ -1,5 +1,6 @@
 package mx.com.burodecredito.domain;
 
+import io.micronaut.http.annotation.Post;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,12 +31,12 @@ public class Folios implements Serializable {
     private String resumen;
 
     @NotNull
-    @Column(name = "id_aplicativo")
-    private Integer idAplicativo;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_lider")
+    private Lideres lider;
 
     @NotNull
-    @Column(name = "id_lider")
-    private Integer idLider;
-
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_aplicativo")
+    private Aplicativos aplicativo;
 }
