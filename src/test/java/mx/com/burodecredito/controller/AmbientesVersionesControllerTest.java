@@ -78,10 +78,10 @@ class AmbientesVersionesControllerTest {
     void testUpdate() {
         AmbientesVersiones params = new AmbientesVersiones();
         params.setIdAmbienteVersion(idPrueba);
-        params.setIdAmbiente(7);
+        //params.setIdAmbiente(7);
         params.setDesde(LocalDate.now());
         params.setHasta(LocalDate.now().plusDays(5));
-        params.setIdVersion(3);
+        //params.setIdVersion(3);
 
         HttpRequest<Object> request = HttpRequest.PUT(API_URI, params);
         AmbientesVersiones response = client.toBlocking().retrieve(request, AmbientesVersiones.class);
@@ -100,10 +100,10 @@ class AmbientesVersionesControllerTest {
     private void addData() {
         log.info("fecha {}", LocalDate.now());
         AmbientesVersiones params = new AmbientesVersiones();
-        params.setIdAmbiente(7);
+        //params.setIdAmbiente(7);
         params.setDesde(LocalDate.now());
         params.setHasta(LocalDate.now().plusDays(5));
-        params.setIdVersion(3);
+        //params.setIdVersion(3);
 
         HttpRequest<Object> request = HttpRequest.POST(API_URI, params);
         AmbientesVersiones response = client.toBlocking().retrieve(request, AmbientesVersiones.class);

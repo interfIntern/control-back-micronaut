@@ -78,8 +78,8 @@ class AmbientesControllerTest {
     void testUpdate() {
         Ambientes params = new Ambientes();
         params.setIdAmbiente(idPrueba);
-        params.setIdServer(4);
-        params.setIdAplicativo(3);
+        //params.setIdServer(4);
+        //params.setIdAplicativo(3);
         params.setUsuario("dato_actualizado: " + idPrueba);
         params.setPuerto(2000);
         params.setRuta("ruta");
@@ -103,8 +103,8 @@ class AmbientesControllerTest {
     private void addData() {
 
         Ambientes params = new Ambientes();
-        params.setIdServer(4);
-        params.setIdAplicativo(3);
+        //params.setIdServer(4);
+        //params.setIdAplicativo(3);
         params.setUsuario("dato insertado");
         params.setPuerto(8000);
         params.setRuta("ruta");

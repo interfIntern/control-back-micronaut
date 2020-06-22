@@ -30,8 +30,9 @@ public class Aplicativos implements Serializable {
     private String resumen;
 
     @NotNull
-    @Column(name = "id_suite")
-    private Integer idSuite;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_suite")
+    private Suites suite;
 
     
 }

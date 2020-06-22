@@ -20,12 +20,15 @@ public class AmbientesVersiones implements Serializable {
     private Integer idAmbienteVersion;
 
     @NotNull
-    @Column(name = "id_ambiente")
-    private Integer idAmbiente;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_ambiente")
+    private Ambientes ambiente;
+
 
     @NotNull
-    @Column(name = "id_version")
-    private Integer idVersion;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_version")
+    private Versiones version;
 
     @NotNull
     @Column(name = "desde")

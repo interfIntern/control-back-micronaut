@@ -79,8 +79,8 @@ class VersionesControllerTest {
     void testUpdate() {
         Versiones params = new Versiones();
         params.setIdVersion(idPrueba);
-        params.setIdAplicativo(3);
-        params.setIdFolio(3);
+        //params.setIdAplicativo(3);
+        //params.setIdFolio(3);
         params.setVersion("1.1");
         params.setDescripcion("Version para automatizar");
         params.setResumen("");
@@ -101,8 +101,8 @@ class VersionesControllerTest {
 
     private void addData() {
         Versiones params = new Versiones();
-        params.setIdAplicativo(3);
-        params.setIdFolio(3);
+        //params.setIdAplicativo(3);
+        //params.setIdFolio(3);
         params.setVersion("1.0");
         params.setDescripcion("Version para automatizar");
         params.setResumen("");

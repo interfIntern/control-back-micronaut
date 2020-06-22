@@ -10,6 +10,7 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.test.annotation.MicronautTest;
 import lombok.extern.slf4j.Slf4j;
 import mx.com.burodecredito.domain.Aplicativos;
+import mx.com.burodecredito.domain.Suites;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
@@ -75,9 +76,11 @@ class AplicativosControllerTest {
     @Test
     @Order(4)
     void testUpdate() {
+        Suites suite = new Suites();
+        suite.setIdSuite(3);
         Aplicativos params = new Aplicativos();
         params.setIdAplicativo(idPrueba);
-        params.setIdSuite(3);
+        params.setSuite(suite);
         params.setNombre("aplicativo actualizada");
         params.setDescripcion("prueba");
         params.setResumen("");
@@ -98,8 +101,10 @@ class AplicativosControllerTest {
     }
 
     private void addData() {
+        Suites suite = new Suites();
+        suite.setIdSuite(3);
         Aplicativos params = new Aplicativos();
-        params.setIdSuite(3);
+        params.setSuite(suite);
         params.setNombre("aplicativo actualizada");
         params.setDescripcion("prueba");
         params.setResumen("");

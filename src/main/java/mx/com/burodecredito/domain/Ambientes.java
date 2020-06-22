@@ -19,8 +19,9 @@ public class Ambientes implements Serializable {
     private Integer idAmbiente;
 
     @NotNull
-    @Column(name = "id_server")
-    private Integer idServer;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_server")
+    private Servers server;
 
     @NotNull
     @Column(name = "usuario")
@@ -39,8 +40,9 @@ public class Ambientes implements Serializable {
     private Integer puerto;
 
     @NotNull
-    @Column(name = "id_aplicativo")
-    private Integer idAplicativo;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_aplicativo")
+    private Aplicativos aplicativo;
 
     
 }

@@ -30,12 +30,14 @@ public class Versiones implements Serializable {
     private String resumen;
 
     @NotNull
-    @Column(name = "id_aplicativo")
-    private Integer idAplicativo;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_aplicativo")
+    private Aplicativos aplicativo;
 
     @NotNull
-    @Column(name = "id_folio")
-    private Integer idFolio;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_folio")
+    private Folios folio;
 
     
 }
